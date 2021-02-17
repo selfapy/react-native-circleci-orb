@@ -5,7 +5,7 @@ usage:
 
   # Make sure you use the latest version of the Orb
   orbs:
-    rn: react-native-community/react-native@1.0.0
+    rn: selfapy/react-native@1.0.0
 
   # Custom jobs which are not part of the Orb
   jobs:
@@ -62,7 +62,7 @@ usage:
         - rn/ios_build:
             name: build_ios_release
             project_path: ios/Example.xcodeproj
-            device: "iPhone X"
+            device: 'iPhone X'
             build_configuration: Release
             scheme: Example
             requires:
@@ -70,11 +70,11 @@ usage:
 
         # Build and test the iOS app in release mode
         - rn/ios_build_and_test:
-            project_path: "ios/Example.xcodeproj"
-            device: "iPhone X"
-            build_configuration: "Release"
-            scheme: "Example"
-            detox_configuration: "ios.sim.release"
+            project_path: 'ios/Example.xcodeproj'
+            device: 'iPhone X'
+            build_configuration: 'Release'
+            scheme: 'Example'
+            detox_configuration: 'ios.sim.release'
             requires:
               - analyse_js
 

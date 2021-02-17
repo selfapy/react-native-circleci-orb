@@ -8,4 +8,4 @@ parameters:
 steps:
   - run:
       name: Detox Build
-      command: detox build -c <<parameters.configuration>>
+      command: detox build -c <<parameters.configuration>> --workers 2
