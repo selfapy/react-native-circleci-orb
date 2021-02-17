@@ -13,4 +13,4 @@ parameters:
 steps:
   - run:
       name: Detox Test
-      command: detox test -c <<parameters.configuration>> -l <<parameters.loglevel>> --headless
+      command: detox test -c <<parameters.configuration>> -l <<parameters.loglevel>> --headless -workers 2
