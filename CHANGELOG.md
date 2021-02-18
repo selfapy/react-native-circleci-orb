@@ -3,6 +3,18 @@
 
 ### Bug Fixes
 
+* duplicated on_after_initialize  param ([#78](https://github.com/selfapy/react-native-circleci-orb/issues/78)) ([33ffc6b](https://github.com/selfapy/react-native-circleci-orb/commit/33ffc6bcea57523af08c19854c64bcf209730eb4))
+
+
+### Features
+
+* Add pod cache ([#67](https://github.com/selfapy/react-native-circleci-orb/issues/67)) ([96b0f3f](https://github.com/selfapy/react-native-circleci-orb/commit/96b0f3fb3e4cbc369abcb169a6e9660689a2f6be))
+
+# [4.5.0](https://github.com/selfapy/react-native-circleci-orb/compare/v4.4.2...v4.5.0) (2021-02-18)
+
+
+### Bug Fixes
+
 * duplicated on_after_initialize  param ([#78](https://github.com/selfapy/react-native-circleci-orb/issues/78)) ([33ffc6b](https://github.com/selfapy/react-native-circleci-orb/commit/33ffc6b))
 
 
