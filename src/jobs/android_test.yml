@@ -16,33 +16,33 @@ parameters:
   device_name:
     description: The name of the AVD. You use this name to tell which device to run tests on. Defaults to 'TestingAVD'.
     type: string
-    default: "TestingAVD"
+    default: 'TestingAVD'
   platform_version:
     description: The version of android to run on the emulator. Defaults to 'android-29'.
     type: string
-    default: "android-29"
+    default: 'android-29'
   build_tools_version:
     description: The version of the Android build tools to install. Defaults to '29.0.3'.
     type: string
-    default: "29.0.3"
+    default: '29.0.3'
   logcat_grep:
     description: ADB logs will be shown in the "Start Android Emulator" commands, but we filter it using grep to avoid noise. You can specify additional strings to grep for. Make sure you escape special characters. Defaults to 'com.reactnativecommunity'.
     type: string
-    default: "com.reactnativecommunity"
+    default: 'com.reactnativecommunity'
   # For the detox command
   detox_configuration:
     description: The Detox configuration to test. Defaults to 'android.emu.release'.
     type: string
-    default: "android.emu.release"
+    default: 'android.emu.release'
   detox_loglevel:
     description: The Detox logging level to use. Must be one of "fatal", "error", "warn", "info", "verbose", or "trace".
     type: enum
-    enum: ["fatal", "error", "warn", "info", "verbose", "trace"]
+    enum: ['fatal', 'error', 'warn', 'info', 'verbose', 'trace']
     default: warn
   store_artifact_path:
-    description: Stores detox artifacts at CircleCI 
+    description: Stores detox artifacts at CircleCI
     type: string
-    default: ""
+    default: ''
   should_on_after_initialize:
     description: Set this to true if you want to run a custom shell command right after yarn install. Provide the command in on_after_initialize_command
     type: boolean
@@ -50,19 +50,17 @@ parameters:
   on_after_initialize:
     description: A custom command to run right after yarn install.
     type: string
-    default: ""
+    default: ''
 
 steps:
   - attach_workspace:
       at: <<parameters.workspace_root>>
-  - setup_macos_executor:
-        node_version: <<parameters.node_version>>
   - yarn_install
   - when:
       condition: <<parameters.should_on_after_initialize>>
       steps:
         - run:
-            name: "on_after_initialize"
+            name: 'on_after_initialize'
             command: <<parameters.on_after_initialize>>
   - when:
       condition: <<parameters.start_metro>>
