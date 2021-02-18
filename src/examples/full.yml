@@ -5,12 +5,12 @@ usage:
 
   # Make sure you use the latest version of the Orb
   orbs:
-    rn: react-native-community/react-native@1.0.0
+    rn: selfapy/react-native@1.0.0
 
   # Custom jobs which are not part of the Orb
   jobs:
     checkout_code:
-      executor: 
+      executor:
         name: rn/linux_js
         node_version: '10'
       steps:
@@ -68,7 +68,7 @@ usage:
         # Build the Android app in debug mode
         - rn/android_build:
             name: build_android_debug
-            project_path: "android"
+            project_path: 'android'
             build_type: debug
             requires:
               - analyse_js
@@ -77,12 +77,12 @@ usage:
         # Note: We split these into seperate jobs because we can build the Android app on a Linux machine and preserve the expensive MacOS executor minutes for when it's required
         - rn/android_build:
             name: build_android_release
-            project_path: "android"
+            project_path: 'android'
             build_type: release
             requires:
               - analyse_js
         - rn/android_test:
-            detox_configuration: "android.emu.release"
+            detox_configuration: 'android.emu.release'
             requires:
               - build_android_release
 
@@ -91,7 +91,7 @@ usage:
             name: build_ios_release
             node_version: '10'
             project_path: ios/Example.xcodeproj
-            device: "iPhone X"
+            device: 'iPhone X'
             build_configuration: Release
             scheme: Example
             requires:
@@ -100,11 +100,11 @@ usage:
         # Build and test the iOS app in release mode
         - rn/ios_build_and_test:
             node_version: '10'
-            project_path: "ios/Example.xcodeproj"
-            device: "iPhone X"
-            build_configuration: "Release"
-            scheme: "Example"
-            detox_configuration: "ios.sim.release"
+            project_path: 'ios/Example.xcodeproj'
+            device: 'iPhone X'
+            build_configuration: 'Release'
+            scheme: 'Example'
+            detox_configuration: 'ios.sim.release'
             requires:
               - analyse_js
 
