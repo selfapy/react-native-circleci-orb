@@ -7,7 +7,7 @@
       "semantic-release-circleci-orb",
       {
         "commandName": "/home/circleci/circleci",
-        "orbName": "selfapy/react-native-rb",
+        "orbName": "selfapy/react-native-orb",
         "orbPath": "packed-orb.yml"
       }
     ],
